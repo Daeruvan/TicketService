@@ -57,6 +57,10 @@ namespace TicketServiceConsole
 
 
 
+        /// <summary>
+        /// Program entry point
+        /// </summary>
+        /// <param name="args">starting arguments</param>
         static void Main(string[] args)
         {
             string command;
@@ -82,6 +86,10 @@ namespace TicketServiceConsole
             }
         }
 
+        /// <summary>
+        /// Runs ticket services
+        /// </summary>
+        /// <param name="args">ticket services arguments</param>
         public static void RunTicketServiceCommand(string[] args)
         {
             if (args == null)
@@ -284,6 +292,17 @@ namespace TicketServiceConsole
             }
         }
 
+        /// <summary>
+        /// Creates the ticket service
+        /// </summary>
+        /// <param name="ticketedEventName">the name of the ticketed event</param>
+        /// <param name="year">year of the event</param>
+        /// <param name="month">month of the event</param>
+        /// <param name="day">day of the event</param>
+        /// <param name="hour">hour of the event</param>
+        /// <param name="min">minute of the event</param>
+        /// <param name="rows">rows of seats at the event</param>
+        /// <param name="cols">columns of seats at the event</param>
         public static void CreateTicketService(string ticketedEventName = "Ultimate-Code-Warrior-LIVE-@-Showbox", int year = 2019, int month = 9, int day = 17, int hour = 6, int min = 30 , int rows = 20, int cols = 15)
         {
             if (ticketService != null)
@@ -464,6 +483,9 @@ namespace TicketServiceConsole
             Console.WriteLine("Ticket Service Successfully setup.");
         }
 
+        /// <summary>
+        /// Tests the numSeatsAvailable function of the ticket service
+        /// </summary>
         public static void TestNumSeatsAvailable()
         {
             if (ticketService == null || ticketedEvent == null)
@@ -474,6 +496,9 @@ namespace TicketServiceConsole
             Assert.AreEqual(ticketedEvent.NumberOfAvailableSeats, ticketService.numSeatsAvailable());
         }
 
+        /// <summary>
+        /// Tests the findAndHoldSeats function of the ticket service
+        /// </summary>
         public static void TestFindAndHoldSeats()
         {
             if (ticketService == null || ticketedEvent == null)
@@ -532,6 +557,9 @@ namespace TicketServiceConsole
             SeatHold.SetSeatHoldDuration(seatHoldExpiresAfter);
         }
 
+        /// <summary>
+        /// Tests the reserveSeats function of the ticket service
+        /// </summary>
         public static void TestReserveSeats()
         {
             if (ticketService == null || ticketedEvent == null)
